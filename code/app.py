@@ -41,7 +41,7 @@ def handle_error(exception):
 @app.errorhandler(RelayError)
 def handle_relay_error(error):
     app.logger.error(traceback.format_exc())
-    return {"errors": [error.json()]}
+    return {"errors": [error.json]}
 
 
 if __name__ == "__main__":

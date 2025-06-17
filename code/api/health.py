@@ -11,7 +11,5 @@ health_api = Blueprint("health", __name__)
 def health():
     credentials = get_credentials()
     client = StealthMoleClient(credentials)
-
-    _ = client.make_observe(current_app.config["HEALTH_CHECKER_DOMAIN"])
-
+    client.make_authentication()
     return jsonify_data({"status": "ok"})
